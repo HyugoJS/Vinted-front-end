@@ -1,0 +1,28 @@
+.offers-tab {
+  background-color: lightgray;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.individual-offers {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 230px;
+  padding: 10px;
+
+  /* width: calc((100% / 5)-20px); */
+}
+.individual-offers img {
+  height: 350px;
+  object-fit: cover;
+}
+.individual-offers p {
+  font-size: 12px;
+  color: grey;
+}
+.individual-offers span {
+  font-size: 14px;
+}
