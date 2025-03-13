@@ -11,13 +11,14 @@
 }
 header.container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 70px;
   align-items: center;
   /* border: red 1px solid; */
-  padding: 0px 400px;
+  padding: 0px 200px;
   background-color: white;
   width: 100%;
+  /* gap: 60px; */
 }
 header img {
   height: 40px;
@@ -25,6 +26,7 @@ header img {
 .header-buttons {
   display: flex;
   gap: 60px;
+  flex-shrink: 0;
 }
 .header-buttons div {
   display: flex;
@@ -55,7 +57,11 @@ button {
   gap: 20px;
   font-size: 34px;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 30%;
   transform: translate(-50%, -50%);
+}
+.link-to-offers {
+  text-decoration: none;
+  color: black;
 }

@@ -58,6 +58,7 @@ const Offer = () => {
                   <p>{data.owner.account.username}</p>
                 </div>
               </div>
+              <button>Acheter</button>
             </div>
           </>
         )}

@@ -70,3 +70,6 @@ body {
 .user-profile p {
   color: black;
 }
+.item-description button {
+  margin-top: 40px;
+}

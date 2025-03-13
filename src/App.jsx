@@ -6,6 +6,8 @@ import axios from "axios";
 import Header from "./components/Header";
 import Home from "./pages/Home/Home";
 import Offer from "./pages/Offer/Offer";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
 
 function App() {
   const [data, setData] = useState({});
@@ -44,6 +46,8 @@ function App() {
             />
           }
         />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

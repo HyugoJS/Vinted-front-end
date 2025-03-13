@@ -6,12 +6,6 @@ import "./Home.css";
 const Home = ({ data, setData }) => {
   return (
     <>
-      <div>
-        <p>This is the Home Page</p>
-      </div>
-
-      {/* {console.log(data)} */}
-      {/* => contient un objet avec toutes les offres dedans. */}
       <div className="hero">
         <Hero />
       </div>
@@ -19,7 +13,11 @@ const Home = ({ data, setData }) => {
         <div className="offers-tab">
           {data.offers.map((offer, index) => {
             return (
-              <Link to={`/offers/${offer._id}`} key={offer._id}>
+              <Link
+                to={`/offers/${offer._id}`}
+                key={offer._id}
+                className="link-to-offers"
+              >
                 <div className="individual-offers">
                   <p>{offer.owner.account.username}</p>
                   <img
