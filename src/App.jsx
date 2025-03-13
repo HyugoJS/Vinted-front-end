@@ -33,7 +33,17 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home data={data} setData={setData} />} />
-        <Route path="/offers" element={<Offer data={data} />} />
+        <Route
+          path="/offers/:id"
+          element={
+            <Offer
+              data={data}
+              setData={setData}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
