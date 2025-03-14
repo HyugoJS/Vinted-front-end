@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Hero from "../../components/Hero";
 import "./Home.css";
+import { useState } from "react";
 
 const Home = ({ data, setData }) => {
   return (

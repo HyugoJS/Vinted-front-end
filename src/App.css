@@ -28,9 +28,15 @@ header img {
   gap: 60px;
   flex-shrink: 0;
 }
+header button:hover {
+  cursor: pointer;
+}
 .header-buttons div {
   display: flex;
   gap: 20px;
+}
+.disconnect {
+  background-color: darkred;
 }
 button {
   background-color: #2baeb7;
@@ -57,7 +63,7 @@ button {
   gap: 20px;
   font-size: 34px;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 30%;
   transform: translate(-50%, -50%);
 }

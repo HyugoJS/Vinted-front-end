@@ -5,8 +5,11 @@ import "./Signup.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const Signup = () => {
-  const [isConnected, setisConnected] = useState(false);
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+
+const Signup = ({ userToken, setUserToken }) => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -20,9 +23,11 @@ const Signup = () => {
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         data
       );
-      console.log(response.data);
-      //   setisConnected(true)
-      // crée un token en cookie
+      if (response.data.token) {
+        Cookies.set("token", response.data.token);
+        setUserToken(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.response);
     }
@@ -81,7 +86,7 @@ const Signup = () => {
           <input
             type="checkbox"
             onChange={handleNewsletter}
-            value={data.newsletter}
+            checked={data.newsletter}
           />
           <h2>S'inscrire a notre newsletter</h2>
         </div>

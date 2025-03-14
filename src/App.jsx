@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
+
 import axios from "axios";
 import Header from "./components/Header";
 import Home from "./pages/Home/Home";
@@ -12,6 +14,7 @@ import Login from "./pages/login/Login";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [userToken, setUserToken] = useState(Cookies.get("token") || null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +35,7 @@ function App() {
     <p>En chargement</p>
   ) : (
     <Router>
-      <Header />
+      <Header userToken={userToken} setUserToken={setUserToken} />
       <Routes>
         <Route path="/" element={<Home data={data} setData={setData} />} />
         <Route
@@ -46,8 +49,14 @@ function App() {
             />
           }
         />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/signup"
+          element={<Signup userToken={userToken} setUserToken={setUserToken} />}
+        />
+        <Route
+          path="/login"
+          element={<Login userToken={userToken} setUserToken={setUserToken} />}
+        />
       </Routes>
     </Router>
   );
