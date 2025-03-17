@@ -20,15 +20,15 @@ const Signup = ({ userToken, setUserToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://site--vinted-backend--fc7nwyvb2r4r.code.run/user/signup",
+        "http://localhost:3000/user/signup",
         data
       );
       console.log(response.data);
-      // if (response.data) {
-      //   Cookies.set("token", response.data.token);
-      //   setUserToken(response.data.token);
-      //   navigate("/");
-      // }
+      if (response.data.token) {
+        Cookies.set("token", response.data.token);
+        setUserToken(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.response);
     }
