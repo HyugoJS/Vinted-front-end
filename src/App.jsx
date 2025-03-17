@@ -10,7 +10,7 @@ import Home from "./pages/Home/Home";
 import Offer from "./pages/Offer/Offer";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
-
+import Publish from "./pages/publish/Publish";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -20,9 +20,9 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/v2/offers"
+          "https://site--vinted-backend--fc7nwyvb2r4r.code.run/offers"
         );
-        // console.log(response.data);
+        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -57,6 +57,7 @@ function App() {
           path="/login"
           element={<Login userToken={userToken} setUserToken={setUserToken} />}
         />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
     </Router>
   );

@@ -20,14 +20,15 @@ const Signup = ({ userToken, setUserToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://site--vinted-backend--fc7nwyvb2r4r.code.run/user/signup",
         data
       );
-      if (response.data.token) {
-        Cookies.set("token", response.data.token);
-        setUserToken(response.data.token);
-        navigate("/");
-      }
+      console.log(response.data);
+      // if (response.data) {
+      //   Cookies.set("token", response.data.token);
+      //   setUserToken(response.data.token);
+      //   navigate("/");
+      // }
     } catch (error) {
       console.log(error.response);
     }

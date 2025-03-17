@@ -21,10 +21,7 @@ const Home = ({ data, setData }) => {
               >
                 <div className="individual-offers">
                   <p>{offer.owner.account.username}</p>
-                  <img
-                    src={offer.product_image.secure_url}
-                    alt="image du produit"
-                  />
+                  <img src={offer.product_image} alt="image du produit" />
                   <span>{offer.product_price}€</span>
                   <p>{offer.product_details[0].MARQUE}</p>
                 </div>

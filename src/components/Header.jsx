@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 const Header = ({ userToken, setUserToken }) => {
   const navigate = useNavigate();
   const existingToken = userToken;
+  const token = Cookies.get("token");
   return (
     <>
       <header className="container">
@@ -22,6 +23,7 @@ const Header = ({ userToken, setUserToken }) => {
               className="disconnect"
               onClick={() => {
                 setUserToken(null);
+                Cookies.remove("token");
               }}
             >
               Se déconnecter
@@ -34,10 +36,17 @@ const Header = ({ userToken, setUserToken }) => {
           )}
         </div>
         <div>
-          <button>Vends tes articles</button>
+          <button
+            onClick={() => {
+              {
+                token ? navigate("/publish") : navigate("/login");
+              }
+            }}
+          >
+            Vends tes articles
+          </button>
         </div>
       </header>
-      ;
     </>
   );
 };
