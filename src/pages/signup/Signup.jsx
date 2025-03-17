@@ -20,7 +20,7 @@ const Signup = ({ userToken, setUserToken }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/user/signup",
+        "https://site--vinted-backend--fc7nwyvb2r4r.code.run/user/signup",
         data
       );
       console.log(response.data);

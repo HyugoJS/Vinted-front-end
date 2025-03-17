@@ -31,7 +31,7 @@ const Publish = () => {
         formData.append("size", size);
         formData.append("color", color);
         formData.append("condition", condition);
-        formData.append("location", location);
+        formData.append("city", city);
         formData.append("price", price);
 
         try {

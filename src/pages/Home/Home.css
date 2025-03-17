@@ -23,6 +23,17 @@
   height: 350px;
   object-fit: cover;
 }
+.individual-offers img:first-child {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .individual-offers p {
   font-size: 12px;
   color: grey;

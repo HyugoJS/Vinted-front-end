@@ -17,7 +17,7 @@ const Offer = () => {
           "https://site--vinted-backend--fc7nwyvb2r4r.code.run/offers/" +
             params.id //remplacer le :id par l'id qu'on choppe en params
         );
-        console.log("ici=>" + response.data);
+        // console.log("ici=>" + response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -36,26 +36,26 @@ const Offer = () => {
         {data && (
           <>
             <div>
-              <img src={data.product_image} alt="image du produit" />
+              <img src={data.product_image.secure_url} alt="image du produit" />
             </div>
             <div className="item-description">
               <h2>{data.product_price}€</h2>
               <ul>
                 <li>MARQUE : {data.product_details[0].MARQUE}</li>
-                <li>TAILLE :</li>
-                <li>ÉTAT : {data.product_details[1].ÉTAT}</li>
-                <li>COULEUR : {data.product_details[2].COULEUR}</li>
-                <li>EMPLACEMENT : {data.product_details[3].EMPLACEMENT}</li>
+                <li>TAILLE : {data.product_details[1].TAILLE}</li>
+                <li>ÉTAT : {data.product_details[2].ÉTAT}</li>
+                <li>COULEUR : {data.product_details[3].COULEUR}</li>
+                <li>EMPLACEMENT : {data.product_details[4].EMPLACEMENT}</li>
                 <li>MODE DE PAIEMENT : Carte, virement</li>
               </ul>
               <div className="user-part">
                 <span>{data.product_name}</span>
                 <p>{data.product_description}</p>
                 <div className="user-profile">
-                  <img
+                  {/* <img
                     src={data.owner.account.avatar.secure_url}
                     alt="avatar"
-                  />
+                  /> */}
                   <p>{data.owner.account.username}</p>
                 </div>
               </div>

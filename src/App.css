@@ -63,7 +63,7 @@ button {
   gap: 20px;
   font-size: 34px;
   position: absolute;
-  top: 50%;
+  top: 295px;
   left: 30%;
   transform: translate(-50%, -50%);
 }
