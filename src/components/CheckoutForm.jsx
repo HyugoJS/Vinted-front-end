@@ -6,7 +6,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ title, price }) => {
   // Permet de faire une requête à Stripe pour confirmer le paiement
   const stripe = useStripe();
   // Permet de récupérer le contenu des inputs
@@ -37,9 +37,11 @@ const CheckoutForm = () => {
     }
 
     // Demande au backend de créer l'intention de paiement, il nous renvoie le clientSecret
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/v2/payment"
-    );
+    const response = await axios.post("http://localhost:3000/payment", {
+      title: title,
+      amount: price * 100,
+    });
+    console.log(response);
 
     const clientSecret = response.data.client_secret;
 

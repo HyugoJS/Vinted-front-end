@@ -10,6 +10,13 @@ p {
   /* background-color: aqua; */
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.total-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 .recap {
   width: 1024px;
@@ -20,4 +27,7 @@ p {
   background-color: white;
   border-radius: 20px;
   margin: 0 auto;
+}
+.recap-p {
+  margin-bottom: 30px;
 }

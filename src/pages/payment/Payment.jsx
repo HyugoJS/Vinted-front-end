@@ -54,11 +54,11 @@ const Payment = () => {
               <p>{travelFees}€</p>
             </div>
           </div>
-          <div>
+          <div className="total-div">
             <p>Total</p>
             <p>{options.amount + buyerFees + travelFees} €</p>
           </div>
-          <p>
+          <p className="recap-p">
             Il ne vous reste plus qu'une étape pour vous offrir{" "}
             <span>{title}</span>. Vous allez payer{" "}
             <span>{options.amount + buyerFees + travelFees} €</span>(frais de
@@ -68,7 +68,7 @@ const Payment = () => {
       </div>
 
       <Elements stripe={stripePromise} options={options}>
-        <CheckoutForm />
+        <CheckoutForm title={title} price={price + buyerFees + travelFees} />
       </Elements>
     </>
   );
