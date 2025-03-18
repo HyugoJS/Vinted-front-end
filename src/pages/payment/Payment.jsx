@@ -39,7 +39,7 @@ const Payment = () => {
       <div className="recap">
         <h1>{title}</h1>
         <div className="command-resume">
-          <p>Résumé de la commande</p>
+          <p className="resume">Résumé de la commande</p>
           <div>
             <div className="command-text">
               <p>Commande</p>

@@ -13,10 +13,19 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.resume {
+  font-size: 12px;
+}
 .total-div {
+  margin-top: 40px;
+  border-top: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+}
+.total-div p {
+  color: black;
+  margin-top: 40px;
 }
 .recap {
   width: 1024px;
@@ -26,8 +35,12 @@ p {
   justify-content: center;
   background-color: white;
   border-radius: 20px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .recap-p {
   margin-bottom: 30px;
+  color: black;
+}
+.recap-p span {
+  font-weight: bold;
 }
