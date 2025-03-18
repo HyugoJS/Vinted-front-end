@@ -3,10 +3,7 @@ import cors from "cors";
 import { useState } from "react";
 import "./Publish.css";
 import Cookies from "js-cookie";
-// const express = require("express");
-// const cors = require("cors");
-// const app = express();
-// app.use(cors());
+import { useNavigate } from "react-router-dom";
 
 const Publish = () => {
   const [file, setFile] = useState(null);
@@ -18,7 +15,7 @@ const Publish = () => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
-
+  const navigate = useNavigate();
   return (
     <form
       onSubmit={async (event) => {
@@ -46,6 +43,8 @@ const Publish = () => {
             }
           );
           console.log(response.data);
+          alert("Votre offre a bien été publiée");
+          // navigate("/offers/" + response.data._id);
         } catch (error) {
           console.log(error.response);
         }

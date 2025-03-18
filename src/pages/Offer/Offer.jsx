@@ -4,11 +4,15 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Offer = () => {
   const params = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const token = Cookies.get("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +63,22 @@ const Offer = () => {
                   <p>{data.owner.account.username}</p>
                 </div>
               </div>
-              <button>Acheter</button>
+              <button
+                onClick={() => {
+                  {
+                    token
+                      ? navigate("/payment", {
+                          state: {
+                            title: data.product_name,
+                            price: data.product_price,
+                          },
+                        })
+                      : navigate("/login");
+                  }
+                }}
+              >
+                Acheter
+              </button>
             </div>
           </>
         )}

@@ -1,0 +1,23 @@
+h1 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+p {
+  color: gray;
+}
+
+.command-text {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+}
+.recap {
+  width: 1024px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  margin: 0 auto;
+}

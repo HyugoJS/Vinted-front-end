@@ -11,6 +11,8 @@ import Offer from "./pages/Offer/Offer";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Publish from "./pages/publish/Publish";
+import Payment from "./pages/Payment/Payment";
+
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +24,7 @@ function App() {
         const response = await axios.get(
           "https://site--vinted-backend--fc7nwyvb2r4r.code.run/offers"
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -58,6 +60,7 @@ function App() {
           element={<Login userToken={userToken} setUserToken={setUserToken} />}
         />
         <Route path="/publish" element={<Publish />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   );
