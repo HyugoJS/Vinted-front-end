@@ -11,7 +11,7 @@ import Offer from "./pages/Offer/Offer";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Publish from "./pages/publish/Publish";
-import Payment from "./pages/Payment/Payment";
+import Payment from "./pages/payment/Payment";
 
 function App() {
   const [data, setData] = useState({});
